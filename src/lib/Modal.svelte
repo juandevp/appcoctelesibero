@@ -64,6 +64,7 @@
 		border-radius: 0.5em;
 		border: none;
 		padding: 0;
+		background-color: rgb(199, 202, 202);
 	}
 	dialog::backdrop {
 		background: rgba(0, 0, 0, 0.3);
