@@ -32,7 +32,7 @@
   }
 </script>
 
-<h1 class="title">Preparación de cócteles</h1>
+<h1 class="title">Preparar Cócteles y Sus Ingredientes</h1>
 
 <div class="container">
   <div class="grid">
