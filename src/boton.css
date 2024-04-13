@@ -6,9 +6,11 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
 .botonEstilo:hover {
   background-color: #03151a;
 }
+
 .botonEstilo:active {
   background-color: #03151a;
 }
