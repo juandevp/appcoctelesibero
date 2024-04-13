@@ -1,12 +1,15 @@
 <script>
 // @ts-nocheck
  	import Modal from './lib/Modal.svelte';
-
+  
+  // Almacena un arreglo con los datos de los cocteles
   let coctels = [];
-  let pagina = 0;
+  // Bandera que indica si muestra el modal
 	let showModal = false;
+  // Variable que usa para saber que coctel se selciona    
   let coctelnombre = 'N/A';
-
+  
+  //Esta funcion se encarga de obtener los cocteles por medio de un llamado GET 
   async function loadCoctels() {
     const response = await fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail");
     const data = await response.json();
@@ -15,17 +18,7 @@
   }  
   
   loadCoctels();
-
-  function siguientePagina() {
-    pagina++;
-    loadCoctels();
-  }
-
-  function anteriorPagina() {
-    pagina--;
-    loadCoctels();
-  }
-
+  // Cambia el estado y asigna el nombre del coctel    
   function cambiarEstado(nombreCoctel){
     showModal = true; 
     coctelnombre = nombreCoctel;

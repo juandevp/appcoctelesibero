@@ -1,14 +1,19 @@
 <script>
+	// Se exportan las variables que se pueden usar por otros componentes 
 	export let showModal; // boolean
 	export let coctelnombre;
-	let dialog; // HTMLDialogElement
-
+	// HTMLDialogElement
+	let dialog; 
+    // Esta condicion valida si a cambiado la variable showModal
+	// y abre el modal y carga los datos de un coctel en particular  
+	// $: indica que cuando cambie la variable se actualice el DOM
 	$: if (dialog && showModal) {
 		fetchData(coctelnombre)
     	dialog.showModal();
 	}
 	
 	let data;
+	// Obtiene los recursos de un coctel en particular
 	export async function fetchData(idCoctel) {
 		try {			  
 		const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+ idCoctel);
@@ -16,25 +21,30 @@
 			throw new Error('Error al obtener los datos');
 		}
 		data = await response.json();
-			console.log(data.drinks[0].strInstructions)
-			console.log(document.getElementById("Instrucciones").innerHTML)
-				document.getElementById("Titulo").innerHTML =data.drinks[0].strDrink+ '-'+data.drinks[0].strCategory;
-				document.getElementById("Ingrediente_1").innerHTML = data.drinks[0].strIngredient1;
-				document.getElementById("Ingrediente_2").innerHTML = data.drinks[0].strIngredient2;
-				document.getElementById("Ingrediente_3").innerHTML = data.drinks[0].strIngredient3;
-				document.getElementById("Ingrediente_4").innerHTML = data.drinks[0].strIngredient4;
-				document.getElementById("Ingrediente_5").innerHTML = data.drinks[0].strIngredient5;
-				document.getElementById("Instrucciones").innerHTML = data.drinks[0].strInstructions;
+		//Al recibir una respuesta HTTP 200 se mapean los campos
+		// y por medio de getElementById se cambia los valores del modal 	
+		document.getElementById("Titulo").innerHTML =data.drinks[0].strDrink+ '-'+data.drinks[0].strCategory;
+		document.getElementById("Ingrediente_1").innerHTML = data.drinks[0].strIngredient1;
+		document.getElementById("Ingrediente_2").innerHTML = data.drinks[0].strIngredient2;
+		document.getElementById("Ingrediente_3").innerHTML = data.drinks[0].strIngredient3;
+		document.getElementById("Ingrediente_4").innerHTML = data.drinks[0].strIngredient4;
+		document.getElementById("Ingrediente_5").innerHTML = data.drinks[0].strIngredient5;
+		document.getElementById("Instrucciones").innerHTML = data.drinks[0].strInstructions;
 		} catch (error) {
 			console.error(error);
 		}
 	}
-
+    // Se encarga de inicializar variables al cerrar modal 
 	function cerrarLimpiarModal(){
     	dialog.close();
 		showModal = false
  	  	document.getElementById("Titulo").innerHTML = '' ;
-		document.getElementById("Instrucciones").innerHTML ='';
+		document.getElementById("Instrucciones").innerHTML = '';
+		document.getElementById("Ingrediente_1").innerHTML = '';
+		document.getElementById("Ingrediente_2").innerHTML = '';
+		document.getElementById("Ingrediente_3").innerHTML = '';
+		document.getElementById("Ingrediente_4").innerHTML = '';
+		document.getElementById("Ingrediente_5").innerHTML = '';	
 	}
 </script>
 
