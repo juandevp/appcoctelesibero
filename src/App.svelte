@@ -2,30 +2,30 @@
 // @ts-nocheck
 
  	import Modal from './lib/Modal.svelte';
-  let characters = [];
+  let coctels = [];
   let pagina = 0;
 
 	let showModal = false;
   let coctelnombre = 'N/A';
 
-  async function loadCharacters() {
+  async function loadCoctels() {
     const response = await fetch(
       "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"    );
     const data = await response.json();
     console.log(data);
-    characters = data.drinks;
+    coctels = data.drinks;
   }  
   
-  loadCharacters();
+  loadCoctels();
 
   function siguientePagina() {
     pagina++;
-    loadCharacters();
+    loadCoctels();
   }
 
   function anteriorPagina() {
     pagina--;
-    loadCharacters();
+    loadCoctels();
   }
   function cambiarEstado(nombreCoctel){
     showModal = true; 
@@ -37,12 +37,12 @@
 
 <div class="container">
   <div class="grid">
-    {#each characters as character}
-   <div class="character">
+    {#each coctels as coctel}
+   <div class="coctel">
   <!-- svelte-ignore a11y-missing-attribute -->
-  <img src={character.strDrinkThumb}  width="20%" />
-  <button class= "botonEstilo" on:click={cambiarEstado(character.strDrink)}>{character.strDrink} </button>
-  <!-- <h3>{character.species}</h3> -->
+  <img src={coctel.strDrinkThumb}  width="20%" />
+  <button class= "botonEstilo" on:click={cambiarEstado(coctel.strDrink)}>{coctel.strDrink} </button>
+  <!-- <h3>{coctel.species}</h3> -->
 </div>
     {/each}
   </div>
