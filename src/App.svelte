@@ -1,7 +1,9 @@
 <script>
+// @ts-nocheck
+
  	import Modal from './lib/Modal.svelte';
   let characters = [];
-  let pagina = 'a';
+  let pagina = 0;
 
 	let showModal = false;
   let coctelnombre = 'N/A';
@@ -37,6 +39,7 @@
   <div class="grid">
     {#each characters as character}
    <div class="character">
+  <!-- svelte-ignore a11y-missing-attribute -->
   <img src={character.strDrinkThumb}  width="20%" />
   <button class= "botonEstilo" on:click={cambiarEstado(character.strDrink)}>{character.strDrink} </button>
   <!--
