@@ -43,7 +43,6 @@
           <div>
             <button class="botonEstilo" on:click={cambiarEstado(coctel.strDrink)}>{coctel.strDrink} </button>
           </div>
-          <!-- <h3>{coctel.species}</h3> -->
       </div>
     {/each}
   </div>
