@@ -19,6 +19,11 @@
 			console.log(data.drinks[0].strInstructions)
 			console.log(document.getElementById("Instrucciones").innerHTML)
 				document.getElementById("Titulo").innerHTML =data.drinks[0].strDrink+ '-'+data.drinks[0].strCategory;
+				document.getElementById("Ingrediente_1").innerHTML = data.drinks[0].strIngredient1;
+				document.getElementById("Ingrediente_2").innerHTML = data.drinks[0].strIngredient2;
+				document.getElementById("Ingrediente_3").innerHTML = data.drinks[0].strIngredient3;
+				document.getElementById("Ingrediente_4").innerHTML = data.drinks[0].strIngredient4;
+				document.getElementById("Ingrediente_5").innerHTML = data.drinks[0].strIngredient5;
 				document.getElementById("Instrucciones").innerHTML = data.drinks[0].strInstructions;
 		} catch (error) {
 			console.error(error);
@@ -38,9 +43,16 @@
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div on:click|stopPropagation>
 		<h3 id="Titulo">{coctelnombre}</h3>
+		<h4>Ingredientes</h4>
 		<ol class="definition-list">
-			<li id="Instrucciones"></li>
+			<li id="Ingrediente_1"></li>
+			<li id="Ingrediente_2"></li>
+			<li id="Ingrediente_3"></li>
+			<li id="Ingrediente_4"></li>
+			<li id="Ingrediente_5"></li>
 		</ol>
+		<h4>Instrucciones</h4>
+		<p id="Instrucciones"></p>
 		<!-- svelte-ignore a11y-autofocus -->
 		<button class="botonEstilo" autofocus on:click={() => dialog.close()}>Cerrar</button>
 	</div>
@@ -49,7 +61,7 @@
 <style>
 	dialog {
 		max-width: 32em;
-		border-radius: 0.2em;
+		border-radius: 0.5em;
 		border: none;
 		padding: 0;
 	}

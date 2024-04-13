@@ -38,9 +38,9 @@
   <div class="grid">
     {#each coctels as coctel}
         <div class="coctel">
-          <h4>{coctel.strDrink}</h4>
+          <h3>{coctel.strDrink}</h3>
           <!-- svelte-ignore a11y-missing-attribute -->
-          <img src={coctel.strDrinkThumb}  width="40%"/>
+          <img src={coctel.strDrinkThumb}  width="80%"/>
           <button class="botonEstilo" on:click={cambiarEstado(coctel.strDrink)}>Ver Preparación</button>
       </div>
     {/each}
