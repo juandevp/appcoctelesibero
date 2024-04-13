@@ -42,8 +42,7 @@
   <!-- svelte-ignore a11y-missing-attribute -->
   <img src={character.strDrinkThumb}  width="20%" />
   <button class= "botonEstilo" on:click={cambiarEstado(character.strDrink)}>{character.strDrink} </button>
-  <!--
-   <h3>{character.species}</h3> -->
+  <!-- <h3>{character.species}</h3> -->
 </div>
     {/each}
   </div>
