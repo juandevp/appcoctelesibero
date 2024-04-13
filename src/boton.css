@@ -1,16 +1,18 @@
 .botonEstilo {
   padding: 10px 20px;
-  background-color: #000000;
+  background-color: #289cbd;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 15px;
+  width: 5rem;
 }
 
 .botonEstilo:hover {
-  background-color: #03151a;
+  background-color: #1bb8e4;
 }
 
 .botonEstilo:active {
-  background-color: #03151a;
+  background-color: #1bb8e4;
 }

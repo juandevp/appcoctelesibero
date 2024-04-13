@@ -37,12 +37,12 @@
 <dialog bind:this={dialog} on:close={ cerrarLimpiarModal} on:click|self={cerrarLimpiarModal}>
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div on:click|stopPropagation>
-		<h2 id = "Titulo">{coctelnombre}</h2>
+		<h3 id="Titulo">{coctelnombre}</h3>
 		<ol class="definition-list">
-			<li id = "Instrucciones"></li>
+			<li id="Instrucciones"></li>
 		</ol>
 		<!-- svelte-ignore a11y-autofocus -->
-		<button class= "botonEstilo" autofocus on:click={() => dialog.close()}>Cerrar</button>
+		<button class="botonEstilo" autofocus on:click={() => dialog.close()}>Cerrar</button>
 	</div>
 </dialog>
 

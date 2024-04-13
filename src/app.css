@@ -1,5 +1,5 @@
 body {
-  background-color: #202020;
+  background-color: rgb(88, 42, 150);
   color: white;
 }
 
@@ -13,20 +13,25 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  margin: 60px;
+  margin: 4rem;
 }
 
 .coctel {
-  background: #101010;
+  background: #0e7592;
   text-align: center;
   border-radius: 20px;
 }
 
 .coctel img {
-  margin-top: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 .coctel button {
   margin-top: 20px;
-  width: 100%;
+  width: 80%;
+}
+
+.coctel h4 {
+  height: 10px;
 }
